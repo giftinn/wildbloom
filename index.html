@@ -7,6 +7,9 @@
 
 </head>
 <body>
+
+  <audio id="backsound" src="song.mp3" loop playsinline preload="auto"></audio
+  
 <!-- partial:index.partial.html -->
 <div class="container">
   <div class="night"></div>
@@ -334,7 +337,7 @@
   
   <!-- Love Message -->
   <div class="love-message">
-    <h1>I Love You, Honey</h1>
+    <h1>I Love You So Bad, Giselle</h1>
   </div>
   
   <script src="./script.js"></script>
@@ -441,7 +444,7 @@
 </div>
   
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
       setTimeout(function() {
         const container = document.querySelector('.container');
         if (container) {
@@ -449,6 +452,16 @@
         }
       }, 100);
     });
+
+    
+    const audio = document.getElementById("backsound");
+    
+    function enableSound() {
+      audio.play().catch(() => {});
+    }
+    
+    document.addEventListener("click", enableSound, { once: true });
+    document.addEventListener("touchstart", enableSound, { once: true });
   </script>
 
 </body>
